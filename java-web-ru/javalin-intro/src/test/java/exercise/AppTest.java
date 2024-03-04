@@ -19,7 +19,7 @@ class AppTest {
     public static void beforeAll() {
         app = App.getApp();
         app.start(0);
-        int port = 7070;
+        int port = app.port();
         baseUrl = "http://localhost:" + port;
     }
 
