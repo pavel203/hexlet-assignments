@@ -30,7 +30,6 @@ class AppTest {
 
     @Test
     void testRoot() {
-        System.out.println(baseUrl);
         HttpResponse<String> response = Unirest.get(baseUrl + "/welcome").asString();
         String content = response.getBody();
         assertThat(response.getStatus()).isEqualTo(200);
