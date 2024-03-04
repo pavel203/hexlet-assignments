@@ -1,6 +1,7 @@
 package exercise;
 
 import io.javalin.Javalin;
+import org.eclipse.jetty.server.Server;
 
 public final class App {
 
@@ -8,7 +9,8 @@ public final class App {
 
         // BEGIN
         return Javalin.create(config -> {
-            config.plugins.enableDevLogging();
+            config.bundledPlugins.enableDevLogging();
+            config.jetty.defaultPort = 7070;
         });
         // END
     }

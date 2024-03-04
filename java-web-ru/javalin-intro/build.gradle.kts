@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // BEGIN
-    implementation("io.javalin:javalin:5.6.1")
+    implementation("io.javalin:javalin:6.1.3")
     implementation("io.javalin:javalin-rendering:5.6.0")
     implementation("gg.jte:jte:3.0.1")
     // END
