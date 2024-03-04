@@ -19,7 +19,7 @@ class AppTest {
     public static void beforeAll() {
         app = App.getApp();
         app.start(0);
-        int port = app.port();
+        int port = 7070
         baseUrl = "http://localhost:" + port;
     }
 
@@ -30,6 +30,7 @@ class AppTest {
 
     @Test
     void testRoot() {
+        System.out.println(baseUrl);
         HttpResponse<String> response = Unirest.get(baseUrl + "/welcome").asString();
         String content = response.getBody();
         assertThat(response.getStatus()).isEqualTo(200);
