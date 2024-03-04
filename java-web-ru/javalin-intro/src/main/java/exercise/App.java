@@ -1,7 +1,6 @@
 package exercise;
 
 import io.javalin.Javalin;
-import org.eclipse.jetty.server.Server;
 
 public final class App {
 
