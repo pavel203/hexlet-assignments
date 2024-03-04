@@ -1,5 +1,9 @@
 package exercise;
 
+// BEGIN
+
+// END
+
 import io.javalin.Javalin;
 
 public final class App {
@@ -7,16 +11,17 @@ public final class App {
     public static Javalin getApp() {
 
         // BEGIN
-        return Javalin.create(config -> {
-            config.bundledPlugins.enableDevLogging();
-            config.jetty.defaultPort = 7070;
+        var app = Javalin.create(config -> {
+            // Включаем логгирование при разработке
+            config.plugins.enableDevLogging();
         });
+        app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet!"));
+        return app;
         // END
     }
 
     public static void main(String[] args) {
         Javalin app = getApp();
-        app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet!"));
         app.start(7070);
     }
 }
