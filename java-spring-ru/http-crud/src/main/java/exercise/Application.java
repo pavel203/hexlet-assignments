@@ -28,7 +28,7 @@ public class Application {
 
     // BEGIN
     @GetMapping("/posts")
-    public List<Post> index(@RequestParam(name = "page", defaultValue = "1") Integer page, @RequestParam(name = "limit") Integer limit) {
+    public List<Post> index(@RequestParam(name = "page", defaultValue = "1") Integer page, @RequestParam(name = "limit", defaultValue = "10") Integer limit) {
         List<Post> pagedPosts = null;
         if (page == 2) {
             pagedPosts = posts.stream().filter(post -> posts.indexOf(post) >= 10 && posts.indexOf(post) <= 19).toList();
